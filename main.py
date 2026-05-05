@@ -1,9 +1,17 @@
+
 # STEP 1A
-# Import SQL Library and Pandas
+import sqlite3
+import pandas as pd
 
 # STEP 1B
 # Connect to the database
-conn = None
+conn = sqlite3.connect('data.sqlite')
+
+# Add code below and run file to see data from employees table
+employee_data = pd.read_sql("""SELECT * FROM employees""", conn)
+print("---------------------Employee Data---------------------")
+print(employee_data)
+print("-------------------End Employee Data-------------------")
 
 
 # STEP 2
