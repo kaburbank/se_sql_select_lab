@@ -18,7 +18,8 @@ print("-------------------End Employee Data-------------------")
 # Replace None with your code
 df_first_five = pd.read_sql("""
     SELECT employeeNumber, lastName
-    FROM employees                       
+    FROM employees
+    LIMIT 5
 """, conn)
 
 # STEP 3
@@ -26,6 +27,8 @@ df_first_five = pd.read_sql("""
 df_five_reverse = pd.read_sql("""
     SELECT lastName, employeeNumber
     FROM employees
+    ORDER BY employeeNumber DESC
+    LIMIT 5
 """, conn)
 
 # STEP 4
